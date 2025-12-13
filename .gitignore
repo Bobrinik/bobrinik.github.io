@@ -19,4 +19,3 @@ vendor/
 # Old ClojureScript files (can be removed after migration)
 cljs-out/
 projects.clj
-css/

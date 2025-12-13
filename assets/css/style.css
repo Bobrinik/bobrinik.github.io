@@ -1,0 +1,106 @@
+/* Custom styles for the site */
+
+/* Base styles */
+body {
+  color: #363636;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Links */
+a {
+  color: #3273dc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Post content */
+.content {
+  padding: 2rem 0;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+  color: #363636;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.content p {
+  margin-bottom: 1rem;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+.content pre {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.content code {
+  background-color: #f5f5f5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.content pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Post list */
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  color: #7a7a7a;
+  font-size: 0.875rem;
+}
+
+/* Header */
+.site-header {
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #363636;
+}
+
+/* Footer */
+.site-footer {
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid #eee;
+  color: #7a7a7a;
+  font-size: 0.875rem;
+}
