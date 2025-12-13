@@ -10,9 +10,11 @@ The current database cannot handle the volume of incoming write requests. During
 
 
 ## Solution
-To scale writes, you can either use a bigger database (scale vertically) or use multiple databases (scale horizontally). Let's say you want to scale horizontally. So you add an extra database. Now, you need to figure out how to forward requests to the scaled databases. You can do it in a round-robin style. The issue is that requests for user X will be persisted across different DBs, which makes querying all records for X longer (we need to query all of the scaled DBs to get results) and makes enforcing table constraints more difficult (cross-database referential integrity is handled outside of database engine). Since round-robin is not working for us because we loose referential integrity this way, we need to route requests such that user X always go to Database 1, so that all of the data for user X is located on Database 1 and database engine can do referential-integrity checks.
+To scale writes, you can either use a bigger database (scale vertically) or use multiple databases (scale horizontally). Let's say you want to scale horizontally. So you add an extra database. Now, you need to figure out how to forward requests to multiple DBs. 
 
-One of the ways to achieve this is to use modulo. We can do modulo on a `user_id` and use the result to tell which database to map our user to. Here's an example of how it can be done. We can take our id convert and convert it to an integer and do our modulo operation on it.
+You can do it in a round-robin style. The issue is that requests for user X are persisted across different DBs, which makes querying all records for X slower (we need to query all  DBs to get results) and makes enforcing table constraints more difficult (cross-database referential integrity is handled outside the database engine). Since round-robin is not working for us because we lose referential integrity this way, we need to route requests so that user X always goes to Database 1, so that all of user X's data is located on Database 1, and the database engine can perform referential-integrity checks for that user.
+
+One way to achieve this is to use the modulo operator. We can take the modulo of `user_id` and use the result to determine which database to map our user to. Here's an example of how it can be done. We can take our ID, convert it to an integer, and perform a modulo operation on it.
 
 ![](/assets/images/2025-11-29-modulo-hashing/image.png)
 
