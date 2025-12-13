@@ -1,33 +1,20 @@
 ---
 layout: default
-title: Home
+title: Blog
 ---
-<section class="section" style="padding-bottom: 1rem;">
+<section class="section">
   <div class="container">
-    <div class="links" style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
-      <a href="https://dev.to/bobrinik" target="_blank" rel="noopener">Dev.to</a>
-      <span style="color: var(--text-muted);">·</span>
-      <a href="https://github.com/Bobrinik" target="_blank" rel="noopener">GitHub</a>
-      <span style="color: var(--text-muted);">·</span>
-      <a href="https://community.wolfram.com/web/maksimbober" target="_blank" rel="noopener">Wolfram Research Notebooks</a>
-      <span style="color: var(--text-muted);">·</span>
-      <a href="https://www.linkedin.com/in/maksim-bober-7665ba100/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top: 1rem;">
-  <div class="container">
-    <h2 class="title is-4">Articles</h2>
+    <h1 class="title is-3">Articles</h1>
+    
     <div class="box" style="padding: 0; overflow: hidden;">
-      {% for post in site.posts limit:10 %}
+      {% for post in site.posts %}
       <div class="post-item">
         <div class="post-title">
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         </div>
         {% if post.tags.size > 0 %}
         <div class="post-tags">
-          {% for tag in post.tags limit:3 %}
+          {% for tag in post.tags %}
           <span class="tag 
             {% case tag %}
               {% when 'React' or 'R' %}is-blue
@@ -55,10 +42,5 @@ title: Home
       </div>
       {% endif %}
     </div>
-    {% if site.posts.size > 10 %}
-    <div style="margin-top: 1rem; text-align: center;">
-      <a href="{{ '/blog/' | relative_url }}" class="button">View all articles →</a>
-    </div>
-    {% endif %}
   </div>
 </section>

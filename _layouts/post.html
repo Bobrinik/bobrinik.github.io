@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container" style="max-width: 800px;">
+    <article>
+      <header style="margin-bottom: 2rem;">
+        <h1 class="title is-2">{{ page.title }}</h1>
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %d, %Y" }}
+          </time>
+          {% if page.tags.size > 0 %}
+          <div class="post-tags" style="margin: 0;">
+            {% for tag in page.tags %}
+            <span class="tag 
+              {% case tag %}
+                {% when 'React' or 'R' %}is-blue
+                {% when 'AWS' or 'Lambda' %}is-orange
+                {% when 'Python' or 'CLI' %}is-gray
+                {% when 'Docker' %}is-teal
+                {% when 'trading' or 'fintech' %}is-green
+                {% when 'tutorial' or 'cheat-sheet' %}is-purple
+                {% when 'MacOS' or 'Bash' %}is-brown
+                {% when 'Wolfram Language' %}is-red
+                {% when 'Deep Dive' %}is-yellow
+                {% when 'Project Launch' %}is-pink
+                {% else %}is-gray
+              {% endcase %}
+            ">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </header>
+      <div class="content" style="font-size: 1.1rem; line-height: 1.8;">
+        {{ content }}
+      </div>
+    </article>
+    
+    <nav style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+      <a href="{{ '/blog/' | relative_url }}">← Back to articles</a>
+    </nav>
+  </div>
+</section>
