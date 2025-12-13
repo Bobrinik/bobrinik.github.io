@@ -234,12 +234,39 @@ a:hover {
 
 /* Links section */
 .links a {
-  color: var(--text-secondary);
+  color: var(--link-color);
   font-size: 0.9rem;
 }
 
 .links a:hover {
+  color: var(--link-hover);
+}
+
+/* Projects list */
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.project-year {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-right: 0.25rem;
+}
+
+.projects-list a {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.projects-list a:hover {
   color: var(--link-color);
+}
+
+.project-separator {
+  color: var(--text-muted);
 }
 
 /* Responsive adjustments */
