@@ -218,9 +218,9 @@ html, body {
   border-radius: 4px;
 }
 
-.content pre {
-  background-color: var(--bg-secondary);
-  padding: 1rem;
+.content pre,
+.highlight {
+  background-color: #272822;
   border-radius: 4px;
   overflow-x: auto;
   border: 1px solid var(--border-color);
@@ -234,10 +234,16 @@ html, body {
   color: #e06c75;
 }
 
-.content pre code {
+.content pre code,
+.highlight code {
   padding: 0;
   background-color: transparent;
-  color: var(--text-primary);
+  color: inherit;
+}
+
+/* Rouge syntax highlighting wrapper */
+.highlighter-rouge {
+  margin: 1rem 0;
 }
 
 /* Links section */
