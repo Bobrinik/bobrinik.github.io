@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Modulo Hashing Visualizer"
+title: "Scaling Databases: The Modulo Hashing Problem Visualized"
 date: 2025-11-29
 tags: [Deep Dive, Tutorial, System Design]
 ---
@@ -240,4 +240,4 @@ root.render(<ModuloHashingVisualizer />);
 </script>
 
 ## Conclusion
-Modulo hashing is simple and works well for static systems, but it becomes problematic when you need to scale. For some cases the number of records that need moving can go up as high as 93%. There are different ways of solving it. One way is to use consisten-hashing or lookup table. 
+Modulo hashing is simple and works well for static systems, but it becomes problematic when you need to scale. For some cases the number of records that need moving can go up as high as 93%. There are different ways of solving it. One way is to use consistent-hashing or lookup table. 
